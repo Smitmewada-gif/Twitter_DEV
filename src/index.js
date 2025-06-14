@@ -27,7 +27,7 @@ app.listen(4000, async ()=>{
   //   name: 'SMIT'
   // });
 
-  const likeService = new LikeService();
-  await likeService.toggleLike(tweets[0].id, 'Tweet', users[0].id);
+  // const likeService = new LikeService();
+  // await likeService.toggleLike(tweets[0].id, 'Tweet', users[0].id);
 
 });
