@@ -6,7 +6,13 @@ const tweetSchema = new mongoose.Schema({
     required: true,
     
     max: [250, 'Tweet cannot be more than 250 characters']
-  }
+  },
+  likes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Like'
+    }
+  ]
 },{timestamps: true});
 
 tweetSchema.virtual('contentWithEmail').get(function process() {
@@ -14,7 +20,6 @@ tweetSchema.virtual('contentWithEmail').get(function process() {
 });
 
 tweetSchema.pre('save', function(next) {
-  console.log('Inside a hook');
   this.content = this.content + '.....';
   next();
 });

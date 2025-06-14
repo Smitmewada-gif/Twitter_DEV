@@ -7,7 +7,7 @@ const likeSchema = new mongoose.Schema({
     enum: ['Tweet', 'Comment']
   },
   likeable: {
-    type: mongoose.Schema.Typses.ObjectId, 
+    type: mongoose.Schema.Types.ObjectId, 
     required: true,
     refPath: 'onModel'  // dynamic reference 
   },
