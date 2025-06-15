@@ -14,9 +14,28 @@ const create = async(req, res) =>{
         data: {},
         success: false,
         message: "Unable to creat tweet",
-        error: errpr
+        error: error
       })
   }
 }
 
-module.exports = {create};
+const getTweet = async(req, res) =>{
+  try {
+    const tweet = await tweetService.get(req.params.id);
+    return res.status(201).json({
+      data: tweet,
+      success: true,
+      message: "Successfully created tweet",
+      error: {}
+    })
+  } catch (error) {
+      return res.status(500).json({
+        data: {},
+        success: false,
+        message: "Unable to creat tweet",
+        error: error
+      })
+  }
+}
+
+module.exports = {create, getTweet};

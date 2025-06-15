@@ -32,6 +32,15 @@ class TweetService {
         console.log(error);  
     }
   }
+
+  async get(id){
+    try {
+      const tweet = await this.tweetRepository.getWithComments(id);
+      return tweet;
+    } catch (error) {
+        throw error;
+    }
+  }
 }
 
 module.exports = TweetService;

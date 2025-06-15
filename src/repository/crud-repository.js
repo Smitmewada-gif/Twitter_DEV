@@ -8,7 +8,6 @@ class CrudRepository{
       return result;
     } catch (error) {
       console.log("Something went wrong in crud repository");
-        (error);
       throw error;
     }
   }
